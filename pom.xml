@@ -30,6 +30,16 @@
         <artifactId>selenium-java</artifactId>
         <version>4.25.0</version> <!-- Use the latest version -->
     </dependency>
+    <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.11.2</version>
+    </dependency>
+    <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>5.11.2</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -51,7 +61,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
+          <version>3.0.0-M7</version>
+          <configuration>
+            <!-- Custom Directory for Reports in the Root Folder -->
+            <reportsDirectory>${project.basedir}/reports</reportsDirectory>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -74,7 +88,23 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+
+        <!-- Surefire Report Plugin for Generating HTML Reports -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-report-plugin</artifactId>
+          <version>3.0.0-M7</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>report-only</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
+
 </project>

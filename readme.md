@@ -8,30 +8,27 @@
 ## Prerequisites
 - Java 22 or above
 - ChromeDriver installed and path set
-- Maven installed (if using Maven)
+- Maven installed
 
 ## Running Tests
 1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd assignment4
-   ```
-
-2. Compile the Java files:
     ```bash
-    javac -d bin src/com/example/*.java
+    git clone https://github.com/MosleAlDeinSoad/SauceDemoAutomationTest.git
+    cd assignment4
     ```
 
-3. Run the tests::
+2. Running Tests Sequentially using Maven:
+
+    Run all tests sequentially by executing the following command in your terminal:
+     ```bash
+     mvn clean test
+     ```
+
+3. Running Individual Tests:
+
+    To run individual tests, you can specify the test class name as follows:
     ```bash
-    java -cp bin com.example.SauceDemoLoginTest1
-    ava -cp bin com.example.SauceDemoPurchaseTest2
-    java -cp bin com.example.SauceDemoPerformanceTest3
-
-    ```
-4. Check the reports/ directory for the generated reports.
-    ```bash
-    Replace `<repository-url>` with your actual GitHub repository URL. This file provides clear instructions on how to run the tests and generate reports.
+    mvn -Dtest=SauceDemoTest#test1 clean test
     ```
 
-
+4. Check the `reports/` directory for the generated reports.
