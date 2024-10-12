@@ -116,11 +116,11 @@ public class SauceDemoTest {
         WebElement checkoutProductName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("inventory_item_name")));
         Assertions.assertEquals(productName, checkoutProductName.getText(), "Error: Product name mismatch!");
 
-        // Get the total price
+       
         WebElement totalPrice = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("summary_total_label")));
         System.out.println("Total Price: " + totalPrice.getText());
 
-        // Complete the purchase
+        
         driver.findElement(By.id("finish")).click();
         WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("complete-header")));
         String expectedSuccess = "THANK YOU FOR YOUR ORDER!";
