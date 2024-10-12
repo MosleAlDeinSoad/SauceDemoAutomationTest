@@ -29,4 +29,9 @@
     java -cp bin com.example.SauceDemoPerformanceTest3
 
     ```
+4. Check the reports/ directory for the generated reports.
+    ```bash
+    Replace `<repository-url>` with your actual GitHub repository URL. This file provides clear instructions on how to run the tests and generate reports.
+    ```
+
 

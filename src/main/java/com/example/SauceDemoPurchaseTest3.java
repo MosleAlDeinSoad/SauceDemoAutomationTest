@@ -68,7 +68,7 @@ public class SauceDemoPurchaseTest3 {
         String expectedSuccess = "THANK YOU FOR YOUR ORDER!";
         
         if (successMessage.getText().toLowerCase().equals(expectedSuccess.toLowerCase())) {
-            System.out.println("Purchase successful!");
+            System.out.println(" Test3 Purchase successful!");
         } else {
             System.out.println("Purchase failed. Expected success message not found.");
         }

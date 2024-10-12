@@ -19,16 +19,16 @@ public class SauceDemoPurchaseTest2 {
 
         driver.get("https://www.saucedemo.com/");
 
-        // Step 1: Login with standard_user
+        
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
 
-        // Step 2: Reset App State using WebDriverWait
+        
         wait.until(ExpectedConditions.elementToBeClickable(By.id("react-burger-menu-btn"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("reset_sidebar_link"))).click();
 
-        // Step 3: Add three products to the cart
+        
         List<WebElement> addButtons = driver.findElements(By.className("btn_inventory"));
         for (int i = 0; i < 3; i++) {
             addButtons.get(i).click();
@@ -65,7 +65,7 @@ public class SauceDemoPurchaseTest2 {
             System.out.println("Purchase failed. Expected success message not found.");
         }
 
-        // Step 8: Reset app state and log out
+        
         wait.until(ExpectedConditions.elementToBeClickable(By.id("react-burger-menu-btn"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("reset_sidebar_link"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.id("logout_sidebar_link"))).click();
